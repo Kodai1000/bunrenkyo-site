@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -23,11 +24,53 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-gray-500">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <nav className="bg-white shadow-md fixed w-full top-0 z-50 text-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <img
+              src="/logo.jpg"
+              alt="Logo"
+              className="h-10 w-auto sm:h-12 object-contain"
+            />
+            <h1 className="text-lg sm:text-xl font-bold">
+              大阪大学外国語学部文化部連絡協議会
+            </h1>
+            <ul className="flex space-x-6 text-sm sm:text-base font-medium">
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  ホーム
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  外語サークル図鑑
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-blue-600 transition-colors duration-200"
+                >
+                  イベント
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main className="pt-24 px-4 sm:px-6 lg:px-8">
+          <div className="bg-white w-10xl">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
