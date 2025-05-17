@@ -2,11 +2,13 @@ import { client } from "@/lib/microcms";
 import type { event_article } from "@/types/event_article";
 import Image from "next/image";
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const club_blog = await client.get({ endpoint: "events" });
-  const club_blogs: event_article[] = club_blog.contents;
-  return club_blogs.map((club) => ({
-    slug: club.slug,
+export async function generateStaticParams(): Promise<
+  { params: { slug: string } }[]
+> {
+  const event_blog = await client.get({ endpoint: "events" });
+  const event_blogs: event_article[] = event_blog.contents;
+  return event_blogs.map((event) => ({
+    params: { slug: event.slug },
   }));
 }
 
