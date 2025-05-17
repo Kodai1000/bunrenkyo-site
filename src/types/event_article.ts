@@ -5,6 +5,7 @@ export type event_article = {
     publishedAt: string,
     revisedAt: string,
     title: string,
+    slug:string,
     status: string,
     remarks: string,
     content: string,
