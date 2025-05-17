@@ -21,9 +21,9 @@ type Props = {
 export default async function PostPage({ params }: Props) {
   const event_blog = await client.get({ endpoint: "events" });
   const event_blogs: event_article[] = event_blog.contents;
-
+  const { slug } = await params;
   const specified_event_blog = event_blogs.find(
-    (event_blog) => params.slug === event_blog.slug
+    (event_blog) => slug === event_blog.slug
   );
 
   if (!specified_event_blog) {
