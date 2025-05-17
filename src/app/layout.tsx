@@ -31,7 +31,7 @@ export default function RootLayout({
         <nav className="bg-white shadow-md fixed w-full top-0 z-50 text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Logo"
               className="h-10 w-auto sm:h-12 object-contain"
             />
