@@ -12,14 +12,17 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 
 
 type Props = {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 };
+
 
 
 export default async function PostPage({ params }: Props) {
   const club_blog = await client.get({ endpoint: "clubs" });
   const club_blogs: club_article[] = club_blog.contents;
-  const {slug} = await params;
+  const {slug} = params;
   const specified_club_blog = club_blogs.find(
     (club_blog) => slug === club_blog.slug
   );
