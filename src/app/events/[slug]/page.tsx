@@ -3,14 +3,15 @@ import type { event_article } from "@/types/event_article";
 import Image from "next/image";
 
 export async function generateStaticParams(): Promise<
-  { params: { slug: string } }[]
+  { slug: string }[]
 > {
   const event_blog = await client.get({ endpoint: "events" });
   const event_blogs: event_article[] = event_blog.contents;
   return event_blogs.map((event) => ({
-    params: { slug: event.slug },
+    slug: event.slug,
   }));
 }
+
 
 type Props = {
   params: Promise<{
