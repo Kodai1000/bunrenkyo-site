@@ -1,6 +1,8 @@
 import { client } from "@/lib/microcms";
 import type { club_article } from "@/types/club_article";
 import Image from "next/image";
+import { Metadata } from "next";
+
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const club_blog = await client.get({ endpoint: "clubs" });
@@ -11,18 +13,28 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 
-type Props = {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const club_blog = await client.get({ endpoint: "clubs" });
+  const club_blogs: club_article[] = club_blog.contents;
+  const specified_club_blog = club_blogs.find((club) => club.slug === params.slug);
+
+  return {
+    title: specified_club_blog?.title || "クラブ記事",
+    description: specified_club_blog?.body.substring(0, 100) || "",
+  };
+}
+
+
+type PageProps = {
   params: {
     slug: string;
   };
 };
 
-
-
-export default async function PostPage({ params }: Props) {
+export default async function PostPage({ params }: PageProps) {
   const club_blog = await client.get({ endpoint: "clubs" });
   const club_blogs: club_article[] = club_blog.contents;
-  const {slug} = params;
+  const { slug } = params;
   const specified_club_blog = club_blogs.find(
     (club_blog) => slug === club_blog.slug
   );
