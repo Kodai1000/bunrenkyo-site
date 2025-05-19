@@ -2,21 +2,19 @@ import { client } from "@/lib/microcms";
 import type { club_article } from "@/types/club_article";
 import Image from "next/image";
 
-export async function generateStaticParams(): Promise<
-  { params: { slug: string } }[]
-> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const club_blog = await client.get({ endpoint: "clubs" });
   const club_blogs: club_article[] = club_blog.contents;
   return club_blogs.map((club) => ({
-    params: { slug: club.slug },
+    slug: club.slug,
   }));
 }
 
+
 type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
+  params: { slug: string };
 };
+
 
 export default async function PostPage({ params }: Props) {
   const club_blog = await client.get({ endpoint: "clubs" });
