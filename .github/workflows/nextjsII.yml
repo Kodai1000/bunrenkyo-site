@@ -29,8 +29,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-        MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-        MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+        MICROCMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+        MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICRO_CMS_SERVICE_DOMAIN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
