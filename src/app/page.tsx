@@ -23,14 +23,6 @@ export default function Home() {
           <p className="text-4xl font-bold mb-2">▶</p>
           <p className="text-xl font-semibold">サークルを探す</p>
         </Link>
-
-        <Link
-          href="/events"
-          className="w-full md:w-64 h-64 bg-green-500 text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-green-600 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
-        >
-          <p className="text-4xl font-bold mb-2">▶</p>
-          <p className="text-xl font-semibold">イベントを探す</p>
-        </Link>
       </section>
     </div>
   );
