@@ -4,6 +4,10 @@
 #
 name: Deploy Next.js site to Pages
 
+env: 
+    MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+    MICRO_CMS_SERVICE_DOMAIN: ${{ secrets.MICRO_CMS_SERVICE_DOMAIN }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -28,9 +32,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env: 
-        MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
-        MICRO_CMS_SERVICE_DOMAIN: ${{ secrets.MICRO_CMS_SERVICE_DOMAIN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
