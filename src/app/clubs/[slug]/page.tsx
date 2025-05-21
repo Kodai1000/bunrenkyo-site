@@ -19,21 +19,8 @@ type Props = {
 };
 
 export default async function PostPage({ params }: Props) {
-  const club_blog = await client.get({ endpoint: "clubs" });
-  const club_blogs: club_article[] = club_blog.contents;
   const {slug} = await params;
-  const specified_club_blog = club_blogs.find(
-    (club_blog) => slug === club_blog.slug
-  );
-
-  if (!specified_club_blog) {
-    return (
-      <p className="text-center text-red-500 mt-10">
-        記事が見つかりませんでした。
-      </p>
-    );
-  }
-
+  const specified_club_blog : club_article = await client.get({ endpoint: `clubs/${slug}` });
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 bg-white">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">
