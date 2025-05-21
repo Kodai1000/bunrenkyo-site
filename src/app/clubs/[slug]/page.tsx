@@ -2,6 +2,8 @@ import { client } from "@/lib/microcms";
 import type { club_article } from "@/types/club_article";
 import Image from "next/image";
 
+export const runtime = 'edge'
+
 export async function generateStaticParams(): Promise<
   { params: { slug: string } }[]
 > {
