@@ -4,22 +4,6 @@ import Image from "next/image";
 
 export const runtime = 'edge'
 
-export async function generateStaticParams(): Promise<
-  { params: { slug: string } }[]
-> {
-  const club_blog = await client.get({ endpoint: "clubs" });
-  const club_blogs: club_article[] = club_blog.contents;
-  return club_blogs.map((club) => ({
-    params: { slug: club.slug },
-  }));
-}
-
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
-
 export default async function PostPage({ params }: Props) {
   const {slug} = await params;
   const specified_club_blog : club_article = await client.get({ endpoint: `clubs/${slug}` });
