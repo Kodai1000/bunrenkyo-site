@@ -4,6 +4,12 @@ import Image from "next/image";
 
 export const runtime = 'edge'
 
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
 export default async function PostPage({ params }: Props) {
   const {slug} = await params;
   const specified_club_blog : club_article = await client.get({ endpoint: `clubs/${slug}` });
