@@ -1,0 +1,7 @@
+# wrangler.toml
+
+name = "bunrenkyo-site"
+compatibility_date = "2025-05-22"
+
+[build]
+command = "npx next-on-pages build"
