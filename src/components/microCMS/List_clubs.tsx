@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function ListClubs() {
-  const club_blog = await client.get({ endpoint: "clubs" });
+  const club_blog = await client.get({ endpoint: "clubs", customRequestInit:{cache: 'no-store'} });
   const club_blogs: club_article[] = club_blog.contents;
 
   return (
