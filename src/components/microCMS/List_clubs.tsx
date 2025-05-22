@@ -7,7 +7,7 @@ import Image from "next/image";
 export const dynamic = 'force-dynamic'; 
 
 export default async function ListClubs() {
-  const club_blog = await client.get({ endpoint: "clubs", customRequestInit:{cache: 'no-store'} });
+  const club_blog = await client.get({ endpoint: "clubs" });
   const club_blogs: club_article[] = club_blog.contents;
 
   return (
