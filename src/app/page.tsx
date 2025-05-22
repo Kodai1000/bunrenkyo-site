@@ -1,10 +1,38 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="px-4 py-8 space-y-12">
+    <div className="flex flex-col items-center">
+      <Image
+        src="/brk.png"
+        alt="文連協を象徴する写真"
+        width={1000}
+        height={2000}
+        style={{ objectFit: 'cover' }}
+      />
+    </div>
+    {/* ボタンリンクセクション */}
+    <section className="flex md:flex-row gap-6 justify-center items-center">
+      <Link
+        href="/clubs"
+        className="w-[500] h-30 bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+      >
+
+        <p className="text-3xl font-semibold">サークルを探す</p>
+        <p className="text-l font-semibold">大阪大学外国語学部のサークルを調べる</p>
+      </Link>
+      <Link
+        href="/events"
+        className="w-[500] h-30 bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+      >
+        <p className="text-3xl font-semibold">イベントを探す</p>
+        <p className="text-l font-semibold">文連協が開催するイベントを調べる</p>
+      </Link>
+    </section>
       {/* 文連協とはセクション */}
-      <section className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 border">
+      <section className="max-w-250 mx-auto bg-white rounded-xl shadow-lg p-8 border">
         <h1 className="text-4xl font-bold text-center border-b pb-4 mb-6">
           文連協とは？
         </h1>
@@ -14,16 +42,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ボタンリンクセクション */}
-      <section className="flex flex-col md:flex-row gap-6 justify-center items-center">
-        <Link
-          href="/clubs"
-          className="w-full md:w-64 h-64 bg-sky-900 text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-100 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
-        >
-          <p className="text-4xl font-bold mb-2">▶</p>
-          <p className="text-xl font-semibold">サークルを探す</p>
-        </Link>
-      </section>
+
     </div>
   );
 }
