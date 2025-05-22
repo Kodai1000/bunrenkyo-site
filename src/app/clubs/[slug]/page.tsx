@@ -3,6 +3,9 @@ import type { club_article } from "@/types/club_article";
 import Image from "next/image";
 
 
+export const runtime = 'edge';
+
+
 export const dynamic = 'force-dynamic'
 
 

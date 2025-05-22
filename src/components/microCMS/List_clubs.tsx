@@ -4,6 +4,8 @@ import type { club_article } from "@/types/club_article";
 import Link from "next/link";
 import Image from "next/image";
 
+export const runtime = 'edge';
+
 export const dynamic = 'force-dynamic'; 
 
 export default async function ListClubs() {
