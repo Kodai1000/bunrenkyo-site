@@ -3,11 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar"
 
-export const metadata = {
-  title: "阪大外語 文化部連絡協議会",
-  desciption:"大阪大学の外国語学部の文化部・文化系サークルの連絡協議会です。",
-  keywords: "大阪大学, 外国語学部, 文化部, 文化系サークル, 連絡協議会",
-}
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "阪大外語 文化部連絡協議会",
   description: "大阪大学の外国語学部の文化部・文化系サークルの連絡協議会です。",
+  keywords: [
+    "大阪大学",
+    "外国語学部",
+    "文化部",
+    "文化系サークル",
+    "連絡協議会",
+    "文化部連絡協議会"]
 };
 
 export default function RootLayout({
