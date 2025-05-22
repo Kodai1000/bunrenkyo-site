@@ -14,21 +14,25 @@ export default function Home() {
       />
     </div>
     {/* ボタンリンクセクション */}
-    <section className="flex md:flex-row gap-6 justify-center items-center">
+    <section className="flex flex-col md:flex-row gap-6 justify-center items-stretch">
       <Link
         href="/clubs"
-        className="w-[500] h-30 bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+        className="w-full md:w-[500px] min-h-[180px] bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
       >
-
-        <p className="text-3xl font-semibold">サークルを探す</p>
-        <p className="text-l font-semibold">大阪大学外国語学部のサークルを調べる</p>
+        <div className="px-4 py-6 flex flex-col justify-center h-full">
+          <p className="text-3xl font-semibold mb-2">サークルを探す</p>
+          <p className="text-base font-semibold">大阪大学外国語学部のサークルを調べる</p>
+        </div>
       </Link>
+
       <Link
         href="/events"
-        className="w-[500] h-30 bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+        className="w-full md:w-[500px] min-h-[180px] bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
       >
-        <p className="text-3xl font-semibold">イベントを探す</p>
-        <p className="text-l font-semibold">文連協が開催するイベントを調べる</p>
+        <div className="px-4 py-6 flex flex-col justify-center h-full">
+          <p className="text-3xl font-semibold mb-2">イベントを探す</p>
+          <p className="text-base font-semibold">文連協が開催するイベントを調べる</p>
+        </div>
       </Link>
     </section>
       {/* 文連協とはセクション */}

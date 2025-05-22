@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "文化部",
     "文化系サークル",
     "連絡協議会",
-    "文化部連絡協議会"]
+    "文化部連絡協議会"],
 };
 
 export default function RootLayout({
