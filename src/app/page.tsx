@@ -8,8 +8,8 @@ export default function Home() {
       <Image
         src="/brk.png"
         alt="文連協を象徴する写真"
-        width={1000}
-        height={2000}
+        width={4000}
+        height={1000}
         style={{ objectFit: 'cover' }}
       />
     </div>
@@ -17,7 +17,7 @@ export default function Home() {
     <section className="flex flex-col md:flex-row gap-6 justify-center items-stretch">
       <Link
         href="/clubs"
-        className="w-full md:w-[500px] min-h-[180px] bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+        className="border border-black w-full md:w-[500px] min-h-[180px] bg-gray-500 text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
       >
         <div className="px-4 py-6 flex flex-col justify-center h-full">
           <p className="text-3xl font-semibold mb-2">サークルを探す</p>
@@ -27,7 +27,7 @@ export default function Home() {
 
       <Link
         href="/events"
-        className="w-full md:w-[500px] min-h-[180px] bg-black text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
+        className="w-full md:w-[500px] min-h-[180px] bg-gray-500 text-white rounded-lg flex flex-col justify-center items-center text-center hover:bg-sky-900 hover:scale-105 hover:shadow-xl transition-transform duration-200 cursor-pointer"
       >
         <div className="px-4 py-6 flex flex-col justify-center h-full">
           <p className="text-3xl font-semibold mb-2">イベントを探す</p>

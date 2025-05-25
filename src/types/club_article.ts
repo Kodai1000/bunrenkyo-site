@@ -12,5 +12,8 @@ export type club_article = {
         url: string,
         height: number,
         width: number
-    }
+    },
+    twitter: string,
+    instagram: string,
+    other: string
 }
