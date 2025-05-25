@@ -23,7 +23,7 @@ export default async function PostPage({ params }: Props) {
       <h1 className="text-6xl font-bold text-gray-800 text-center mb-4">
             {specified_club_blog.title}
       </h1>
-      <div className="grid grid-cols-1 grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex justify-center items-center">
           <Image
             alt="Picture of the club"

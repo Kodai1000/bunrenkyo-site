@@ -8,14 +8,16 @@ export const runtime = 'edge';
 
 export const dynamic = 'force-dynamic'; 
 
-export default async function ListClubs() {
+export default async function ListClubs({option = "none"}) {
   const club_blog = await client.get({ endpoint: "clubs" });
-  const club_blogs: club_article[] = club_blog.contents;
+  let club_blogs: club_article[] = club_blog.contents;
+  if (option == "none"){
+    console.log("No option provided, displaying all clubs.");
+  }else{
+    club_blogs = club_blogs.filter((item) => item.title.includes(option));
+  }
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        外語サークル図鑑
-      </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {club_blogs.map((item) => (
           <li
