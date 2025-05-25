@@ -1,9 +1,14 @@
 import ListClubs from "@/components/microCMS/List_clubs";
+
+export const runtime = 'edge'
+
 type Props = {
   params: Promise<{
     keyword: string;
   }>;
 };
+
+
 
 export default async function PostPage({ params }: Props) {
   let {keyword} = await params;
