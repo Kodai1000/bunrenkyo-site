@@ -15,5 +15,6 @@ export type club_article = {
     },
     twitter: string,
     instagram: string,
-    other: string
+    other: string,
+    keywords: string
 }

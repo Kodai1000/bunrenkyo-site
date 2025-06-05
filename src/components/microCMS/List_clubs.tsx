@@ -14,7 +14,7 @@ export default async function ListClubs({option = "none"}) {
   if (option == "none"){
     console.log("No option provided, displaying all clubs.");
   }else{
-    club_blogs = club_blogs.filter((item) => item.title.includes(option));
+    club_blogs = club_blogs.filter((item) => item.title.includes(option) || item.keywords.includes(option));
   }
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
