@@ -5,9 +5,7 @@ import Link from "next/link";
 
 export const runtime = 'edge';
 
-
 export const dynamic = 'force-dynamic'
-
 
 type Props = {
   params: Promise<{
@@ -51,23 +49,27 @@ export default async function PostPage({ params }: Props) {
               <tr className="border border-black">
                 <td className="p-4 text-xl font-semibold bg-gray-300">Instagram:</td>
                 <td className="p-4 text-xl">
-                  <Link
+                {specified_club_blog.instagram ? (<Link
                     href={specified_club_blog.instagram}
                     className="text-blue-500 hover:underline break-all"
                   >
                     {specified_club_blog.instagram}
-                  </Link>
+                  </Link>) : (
+                    <p>なし</p>
+                  )}
                 </td>
               </tr>
               <tr className="border border-black">
                 <td className="p-4 text-xl font-semibold bg-gray-300">X:</td>
                 <td className="p-4 text-xl">
-                  <Link
+                  { specified_club_blog.twitter ? (<Link
                     href={specified_club_blog.twitter}
                     className="text-blue-500 hover:underline break-all"
                   >
                     {specified_club_blog.twitter}
-                  </Link>
+                  </Link>) : (
+                    <p>なし</p>
+                  )}
                 </td>
               </tr>
             </tbody>
